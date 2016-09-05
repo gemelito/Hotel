@@ -1,0 +1,182 @@
+Parte I. Opción multiple
+Lea cada pregunta cuidadosamente y escoja la(s) mejor(es) respuesta(s). 
+1. ¿Cuál de las siguientes opciones aplica a la complejidad de bubble sort? *
+  es O(n log(n))
+ es Theta(n log(n))
+ es Omega(n log(n))
+ ninguna de las anteriores
+2. ¿Cuál es la complejidad óptima para ordenar un arreglo de n números enteros de 32 bits? *
+  O(n)
+ O(n log(n))
+ O(n log(log n))
+ ninguna de las anteriores
+3. Una implementación de un contenedor de tipo vector usa memoria contigua para almacenar sus elementos, y reserva 1 entrada cuando es creado. Cuando se añade un nuevo elemento, si hay entradas disponibles, usa una de esas entradas para el nuevo elemento, pero si no hay entradas disponibles, reserva el doble de memoria que tiene en ese momento, copia todo su contenido al nuevo buffer, y reintenta la inserción. ¿Cuál es la complejidad acumulada de insertar n números en un nuevo vector? *
+  O(n^3)
+ O(n^2)
+ O(n log n)
+ O(n)
+ O(log(n))
+ O(1)
+ ninguna de las anteriores
+4. Un árbol binario de ordenación tiene 3,568 elementos. ¿Cuál es el número mínimo posible de niveles que tiene ese árbol? *
+  3567
+ 3568
+ 1784
+ 1785
+ 11
+ 12
+ ninguna de las anteriores
+5. Hacer un programa que tome como entrada otro programa P y decida si, al ejecutarse P, P se detiene (termina) en menos de un día es: *
+  prácticamente trivial
+ extremadamente difícil pero posible
+ imposible
+ ninguna de las anteriores
+6. • Cada elemento debe ser único. • No contiene elementos duplicados. • Elementos no son pares clave/valor. • Entradas no son ordenadas usando interfaces Comparator o Comparable. • El orden de iteración es determinado por el orden de inserción. ¿Cuáles de estas clases tienen estas características? *
+  HashMap
+ HashSet
+ Hashtable
+ LinkedHashMap
+ LinkedHashSet
+ LinkedList
+ TreeMap
+ TreeSet
+7. ¿Cuál de las siguientes clases es la implementación más eficiente de un queue First In First Out, considerando la complejidad de cada operación en el peor caso? *
+  ArrayList
+ LinkedHashMap
+ LinkedHashSet
+ LinkedList
+ HashMap
+ HashSet
+ Hashtable
+ TreeMap
+ TreeSet
+ Vector
+ Ninguna
+8. Considera el problema de determinar si una gráfica dada tiene un ciclo que pasa por todos sus vértices. ¿Cuáles de los siguientes enunciados se pueden decir sobre ese problema? *
+  Se puede resolver en tiempo constante
+ Se puede resolver en tiempo polinomial
+ Es NP-completo
+ Es NP
+ Es NP-duro
+9. Tienes un entero en una base de datos central no transaccional, el cual es accesado al mismo tiempo por una aplicación instalada en tres teléfonos. El valor original de ese entero es 3. La aplicación que se ejecuta en los teléfonos hace lo siguiente: *
+1) Lee el entero que está en la base de datos. 2) Decrementa en 1 el valor leido. 3) Actualiza el entero en la base de datos con el valor que calculó en el paso anterior. ¿Cuál(es) es/son el/los posible(s) valor(es) final(es) del entero en la base de datos?
+  3
+ 2
+ 1
+ 0
+10. Base de datos
+Mira la estructura de base de datos de las tablas UBICACIONES y DEPARTAMENTOS. Necesitas mostrar todas las ciudades que tengan solo un departamento. ¿Cuál query te da el resultado correcto?
+
+UBICACIONES
+ 
+Nombre                               Null?                     Tipo
+ 
+UBICACION_ID                   NOT NULL             NUMBER(4)
+DIRECCION_CALLE                                         VARCHAR2(40) 
+CODIGO_POSTAL                                           VARCHAR2(12)  
+CIUDAD                                                          VARCHAR2(30)
+ESTADO                                                         VARCHAR2(25) 
+PAIS_ID                                                          CHAR(2)
+
+DEPARTAMENTOS
+ 
+Nombre                                  Null?                   Tipo
+
+DEPARTMENTO_ID               NOT NULL           NUMBER(4)
+DEPARTMENTO_NOMBRE    NOT NULL           VARCHAR2(30) 
+MANAGER_ID                                                  NUMBER(6)
+UBICACION_ID                                                 NUMBER(4)
+
+
+
+
+
+*
+  SELECT ubicacion_id, ciudad  FROM ubicaciones WHERE EXISTS (SELECT COUNT(*)  FROM departamentos  GROUP BY ubicacion_id HAVING COUNT(*) = 1);
+ SELECT ubicacion_id, ciudad  FROM ubicaciones u  WHERE 1 = (SELECT COUNT(*)  FROM departamentos  WHERE ubicacion_id = u.ubicacion_id);
+ SELECT ubicacion_id, ciudad  FROM ubicaciones WHERE  1 = (SELECT COUNT(*) FROM departamentos  GROUP BY ubicacion_id);
+ SELECT u.ubicacion_id, ciudad  FROM ubicaciones u JOIN departamentos d ON (u.ubicacion_id = d.ubicacion_id)  WHERE EXISTS (SELECT COUNT(*)  FROM departamentos d  WHERE u.ubicacion_id =d.ubicacion_id);
+Parte II. Desarrollo de programas
+En los cuatro incisos de esta sección debes pegar el código de los archivos de Java que allí se te solicitan.
+
+La compilación y verificación de tus clases se hará de forma totalmente automática, así que es muy importante que no tengas ningún error al momento de cortar y pegar tu código, pues no seremos capaces de detectar errores triviales de edición (por ejemplo, que se te haya pasado copiar la última llave que cierra la declaración de tu clase). 
+
+Insistimos, lo que pongas en cada campo debe ser código válido compilable de Java.  No requieres de librerias sofisticadas ni de características avanzadas de Java. Así que escribe tu código de forma que sea muy neutro ante diferentes versiones del SDK. Usaremos Java 6 para verificar tu código.
+
+Lo que haremos será poner tu código en un archivo con el mismo nombre que la clase que se te pide, compilar tu archivo, compilar un archivo que usará a tu clase y le hará una serie de pruebas, crear un ejecutable y ejecutarlo; todo de forma automática. 
+
+Lee cada ejercicio cuidadosamente y envía el programa más eficiente (en terminos de costo de espacio y tiempo asintótico) que puedas. 
+ 
+Programa 1
+Pega el contenido de un archivo llamado Primes.java con una clase pública Primes que tenga un método 
+final static int numberOfSquaresOfPrimes(int n), 
+que devuelva el número de enteros que son cuadros de primos que hay entre 2 y n.   
+
+Tu método debe usar el algoritmo adecuado para que devuelva el resultado correcto en menos de 1 segundo para cualquier valor de n entre 2 y 1 000 000 000, en cualquier PC con especificaciones de los últimos 8 años.
+Contenido de Primes.java
+ 
+Programa 2
+En el siguiente campo pega el contenido de un archivo llamado DoubleAnagram.java con una clase DoubleAnagram con un método
+public static bool areDoubleAnagram(String s1, String s2), 
+que devuelva si s2 es anagrama doble de s1.
+
+Una cadena B es anagrama doble de una cadena A,si, al remover los espacios en blanco de ambas, B se obtiene de reordenar las letras de A (con los espacios removidos) concatenada consigo misma.
+ Ejemplos de anagramas dobles: “amor” <->”omar mora”, “JAMON” <-> “MOJAN MONJA”, “pala” <-> “la palapa”. 
+
+Tu método debe usar el algoritmo adecuado para que devuelva el resultado correcto en menos de 1 segundo para cualquier par de cadenas de longitud hasta 10,000 caracteres, en cualquier PC con especificaciones de los últimos 8 años.
+Contenido de DoubleAnagram.java
+ 
+Programa 3
+Un sudoku completo es una cuadrícula de 9×9 celdas dividida en subcuadrículas de 3×3 con las cifras del 1 al 9 partiendo de algunos números ya dispuestos en algunas de las celdas. No se debe repetir ninguna cifra en una misma fila, columna o subcuadrícula. 
+
+En el siguiente campo pega el contenido de un archivo llamado Sudoku.java con una clase Sudoku con un método
+public static boolean isValid(int [ ][ ]),
+ que devuelva “true” si el arreglo de enteros ingresado es un sudoku completo válido, y “false” si no es un Sudoku completo válido.
+
+Tu método debe usar el algoritmo adecuado para que devuelva el resultado correcto en menos de 1 segundo, en cualquier PC con especificaciones de los últimos 8 años.
+Contenido de Sudoku.java
+ 
+Programa 4
+Usando los conceptos de OOP crea una abstracción de una cafetera.
+
+En el siguiente campo pega el contenido de un archivo llamado Cafetera.java con una clase pública Cafetera,
+
+Con una constructora:
+public Cafetera(int maxCafe, int maxAgua, int maxTazas);
+
+donde:
+maxCafe - la cantidád máxima de café en grano (en cucharadas)
+maxAgua - la cantitád máxima de aqua (en tazas)
+maxTazas - la cantitád máxima de café preparado (en tazas)
+
+y con los campos:
+int cafe - la cantidad actual de café en grano (en cucharadas)
+int agua - la cantitad actual de aqua (en tazas)
+int tazas - la cantidad actual de café preparado (en tazas)
+
+y con los métodos (todos ellos públicos):
+
+boolean agrCafe(int cucharadas)  -  agregar cucharadas de café en grano a la cafetera
+
+boolean agrAgua(int tazas)  -  agregar tazas de agua a la cafetera
+
+int hazCafe()  -  hacer la mayor cantidád de cafe preparado con los ingredientes disponibles (hasta el límite maxTazas) y retornar la cantidad de tazas que se prepararon durante esta operación 
+
+int numTazas()  -  el número de tazas de café preparado actualmente 
+
+boolean servirTaza()  -  servir una taza de café preparado
+
+boolean vaciar()  -  vaciar todos los contenidos de la cafetera
+
+Reglas:
+1) 1 taza de café preparado = 1 taza de agua + 2 cucharadas de café en grano
+
+2) Debe funcionar como cafetera real:  
+-No se permite servir una taza si no hay café preparado.
+-No se permitan cantidades negativas de los campos cafe, agua, y tazas (los argumentos de agrAgua(int) y agrCafe(int) deben ser positivos).
+-Si una operación de agregar café o agua desbordaría alguna capacidad, entonces esa operación no se permite.
+
+Si una operación no se permite, el método debería levantar una Exception con un mensaje detallado.
+
+3) Cada invocación de un método exitoso (no levanta Exception) debe retornar "true" si el resultado es de tipo boolean.
+Contenido de Cafetera.java

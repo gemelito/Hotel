@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hotel Flamingo</title>
+        <meta name="description" content="Disfruta de tus vacaciones en nuestra cadena hotelera.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+    <!-- Hack for mobiles, ontouchstart -->
+    <body ontouchstart="">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <header>
+            <br><div id='logo'><br><h1 style="color:black;">Villas Flamingo</h1></div>
+            <div id="navigation">
+                    <nav class='callig'>
+                        <ul id='navigation'>
+                            <li><a href='#index'>Inicio</a></li>
+                            <li><a href='#costos'>Villas</a></li>
+                            <li><a href='#cuartos'>Fotos</a></li>
+                            <li><a href='#contacto'>Contacto y Reservaciones</a></li>
+                            <!--li><a href='#comida'>Buffet</a></li-->
+                        </ul>
+                    </nav>            
+                    <section id='social-buttons'>
+                        
+                    </section>
+            </div>
+        </header>
+        <div class='form_container fullScreen' data-stellar-ratio="0.5" >
+            <div class="slideContainer">
+                <div class="slide fullScreen" data-background='imgs/DSCF0302'>
+                </div>
+                <div class="slide fullScreen" data-background='imgs/DSCF0303'>
+                </div>
+                <div class="slide fullScreen" data-background='imgs/DSCF0308' >
+                    
+                </div>
+                <div class="slide fullScreen" data-background='imgs/DSCN1592' >
+                    
+                </div>
+            </div>
+        </div>
+        <section class='fullScreen' id='index'>
+                <div class="mensaje">
+                    <p class='triangle'><span>From 335USD per night</span></p>
+                    <h2>"A destination of relaxation and joyness"</h2>
+                    <p>Punta Marina, Cancún</p>
+                </div>
+        </section>
+        
+        <section class="fullScreen" id='cuartos'>
+            <h1 class='centerCircle callig'>El mejor servicio</h1>
+            <div class="half halfRooms">
+                <img src="imgs/DSCF0037.jpg" class='crop'>
+            </div>
+            <div class="half halfRooms">
+                <img src="imgs/DSCN1127.jpg" class='crop'>
+            </div>
+        </section>
+        <script id="precioTemplate" type="text/x-jquery-tmpl">
+        <div>
+            <div class='ribbon'></div>
+            <h3>Paquete básico</h3>
+            <p><strong>Contenido del paquete</strong></p>
+            <ol>
+                {{each opciones}}
+                    <li>${opcion}</li>
+                {{/each}}
+            </ol>
+            <p class='costo'>300</p>
+            <a id='regresar-ventana'>Regresar</a>
+        </div>
+        </script>
+        <section class="fullScreen callig" id='costos' data-stellar-background-ratio="1.5">
+            <div class='marginTop'>
+                <div class="precio">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class='costo'>300</p>
+                    <a class='ver-mas' data-number='0'>Conoce más.</a>
+                </div>
+                <div class="precio">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class='costo'>300</p>
+                    <a class='ver-mas' data-number='1'>Conoce más.</a>                    
+                </div>
+                <div class="precio">
+                    <div class="ribbon"></div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, perfecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class='costo'>300</p>
+                    <a class='ver-mas' data-number='2'>Conoce más.</a>                    
+                </div>
+            </div>
+        </section>
+        <section class="fullScreen" id='comida' data-stellar-background-ratio='0.5'>
+            <div class="image_food viewport" data-background='imgs/DSCF0330'></div>
+            <div class="image_food" data-background='imgs/DSCF0311'>
+
+            </div>
+            <div class="image_food" data-background='imgs/DSCF0371'></div>
+            <div class="image_food" data-background='imgs/DSCF0330'></div>
+            
+        </section>
+        <section class='fullScreen' id='contacto' data-stellar-background-ratio="0.5">
+            <div class="marginTop callig">
+                <h1>Contacto</h1>
+                <div class="half">
+                    <h3>Redes sociales</h3>
+                    <span class='social'>F</span><span class='social'>O</span><span class='social'>X</span>
+                    <h3>Dirección y teléfono</h3>
+                    <p>Dirección inventada, avenida inventada, número inventado</p>
+                    <p>Teléfono 123123192</p>
+                </div>
+
+                <div class="half"><div id="google_canvas"></div></div>
+            </div>
+        </section>
+        
+        <script src="http://maps.googleapis.com/maps/api/js?&sensor=true">
+        </script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>       
+        <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
+        
+        
+        <script src='js/production.js'></script>
+    </body>
+</html>

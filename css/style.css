@@ -1,0 +1,533 @@
+/*@charset "CP850";
+@font-face {
+  font-family: "BebasNeue";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/BebasNeue.eot");
+  src: url("../fonts/BebasNeue.otf"), url("../fonts/BebasNeue.ttf"); }
+
+@font-face {
+  font-family: "Socialico";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Socialico.eot");
+  src: url("../fonts/Socialico.otf"), url("../fonts/Socialico.ttf"); }
+*/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; }
+
+body {
+  background: linear-gradient(90deg, #134e5e 10%, #71b280 90%);
+  font-family: 'Fjalla One', sans-serif;
+  margin-top: -2em; }
+
+a {
+  color: inherit; }
+  a:visited {
+    color: inherit; }
+  a:hover {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer; }
+
+.callig {
+  font-family: 'Fjalla One', sans-serif; }
+
+.centerCircle {
+  position: relative;
+  z-index: 5;
+  height: 100px;
+  width: 100px;
+  padding: 50px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+  top: 35%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid 2px #d8d68c;
+  border-radius: 100px;
+  text-align: center;
+  color: #f7f7f7;
+  font-size: 1.8em; }
+
+.chevron {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid #f7f7f7;
+  margin: 0 auto; }
+
+#contacto {
+  background: url(../imgs/DSCN1218.jpg);
+  background-size: 100% auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-align: center; }
+  #contacto .social {
+    font-size: 5em;
+    display: inline-block;
+    transition: all 0.4s;
+    cursor: pointer; }
+    #contacto .social:hover {
+      color: #3e87cc; }
+  #contacto p {
+    font-size: 1.5em;
+    color: #222;
+    text-shadow: 0px 0px 2px #000;
+    background-color: rgba(250, 250, 250, 0.7); }
+  #contacto .half:nth-of-type(1) h3 {
+    font-size: 2em;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    padding: 0.7em;
+    color: #3e87cc; }
+
+#comida {
+  position: relative; }
+  #comida .image_food {
+    z-index: 20;
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    transition: all 1s ease-in;
+    background-size: 100%;
+    background-position: 50%;
+    cursor: pointer; }
+  #comida .viewport {
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    background-color: rgba(250, 250, 250, 0.3);
+    transition: all 1s ease-in;
+    cursor: auto; }
+
+#costos {
+  background: url(../imgs/DSCN1332.jpg);
+  background-size: 100% auto; }
+  #costos .precio {
+    width: 28%;
+    margin-left: 3.5%;
+    border: 1px solid #CCC;
+    display: inline-block;
+    vertical-align: top;
+    padding: 2em 0.5%;
+    background-color: #f7f7f7;
+    padding-top: 0;
+    text-align: center; }
+    #costos .precio h3 {
+      font-size: 2em;
+      color: #3e87cc; }
+    #costos .precio .costo {
+      background-color: #3e87cc;
+      color: #fff;
+      font-size: 1.5em;
+      width: 50%;
+      margin: 0 auto;
+      padding: 0.5em; }
+
+#empresas {
+  margin-bottom: 4em; }
+  #empresas .span3 img {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    /* Firefox 10+, Firefox on Android */
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    width: 50%; }
+
+footer {
+  padding: 1em;
+  color: #cecece; }
+  footer .row-fluid {
+    width: 80%;
+    margin: 0 auto; }
+  footer a {
+    display: block;
+    color: #f7f7f7;
+    font-size: 0.8em;
+    margin: 1em 0;
+    border-bottom: dotted 1px #f7f7f7; }
+    footer a:visited {
+      color: inherit; }
+
+.form_container {
+  margin: 0 auto;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 110%;
+  z-index: -2;
+  background: rgba(126,194,131,1);
+  background: -moz-linear-gradient(left, rgba(126,194,131,1) 0%, rgba(117,189,209,1) 41%, rgba(0,3,51,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(126,194,131,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(0,3,51,1)));
+  background: -webkit-linear-gradient(left, rgba(126,194,131,1) 0%, rgba(117,189,209,1) 41%, rgba(0,3,51,1) 100%);
+  background: -o-linear-gradient(left, rgba(126,194,131,1) 0%, rgba(117,189,209,1) 41%, rgba(0,3,51,1) 100%);
+  background: -ms-linear-gradient(left, rgba(126,194,131,1) 0%, rgba(117,189,209,1) 41%, rgba(0,3,51,1) 100%);
+  background: linear-gradient(to right, rgba(126,194,131,1) 0%, rgba(117,189,209,1) 41%, rgba(0,3,51,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ec283', endColorstr='#000333', GradientType=1 );
+}
+  .form_container .slideContainer {
+    white-space: nowrap; }
+    .form_container .slideContainer .slide {
+      display: inline-block;
+      margin-right: -4px;
+      vertical-align: top;
+      background-size: 100%;
+      background-position: bottom; }
+
+.fullScreen {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed; }
+  .fullScreen footer {
+    height: 100px; }
+    .fullScreen footer:before {
+      content: '';
+      position: relative;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: red; }
+    .fullScreen footer:after {
+      content: '';
+      position: relative;
+      top: -50px;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background-color: red; }
+
+#go_up {
+  cursor: pointer;
+  position: fixed;
+  top: 85%;
+  left: 90%;
+  height: 70px;
+  width: 100px;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 60px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid 2px #d8d68c;
+  color: #f7f7f7; }
+
+#google_canvas {
+  width: 100%;
+  height: 400px;
+  border: solid 5px #eee;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); }
+
+.half {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  width: 50%; }
+
+.halfRooms {
+  display: inline-block;
+  margin-right: -4px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  top: -215px;
+  overflow: hidden; }
+  .halfRooms img {
+    width: 100%;
+    -webkit-filter: blur(5px);
+    -webkit-filter: grayscale(1);
+    transition: all 3s; }
+    .halfRooms img:hover {
+      -webkit-filter: blur(0px);
+      -webkit-filter: grayscale(0.1);
+      width: 120%; }
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  color: #f7f7f7;
+  position: fixed;
+  z-index: 20;
+  text-align: center;
+  top: -10em;
+  transition: all 0.4s; }
+  header:hover nav ul {
+    height: 30px; }
+  header:hover {
+    top: -7em; }
+  header:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    box-shadow: 0 0 5px #ddd;
+    background: #fff;
+    -webkit-transform: skew(0deg, 5deg);
+    -moz-transform: skew(0deg, 5deg);
+    -ms-transform: skew(0deg, 5deg);
+    -o-transform: skew(0deg, 5deg);
+    transform: skew(0deg, 5deg);
+    left: 0; }
+  header:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    box-shadow: 0 0 5px #ddd;
+    background: #fff;
+    -webkit-transform: skew(0deg, -5deg);
+    -moz-transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -5deg);
+    -o-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+    right: 0; }
+  header ​
+  h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5em; }
+  header nav ul {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s;
+    padding: 0;
+    font-weight: bolder;
+    color: #333;
+    padding-top: 0.5em;
+    margin-bottom: -2em; }
+    header nav ul li {
+      display: inline-block; }
+      header nav ul li a {
+        -webkit-transform: rotate(45deg);
+        padding: 0 10px; }
+  header form {
+    margin-top: 2em; }
+    header form input[type='search'] {
+      width: 100%;
+      border: none;
+      background-color: #fff; }
+
+.info {
+  height: 450px;
+  overflow-y: scroll; }
+
+#logo {
+  box-shadow: 0 0 5px #ddd;
+  background: #fff;
+  position: relative;
+  width: 15%;
+  text-align: center;
+  min-width: 100px;
+  max-width: 100%;
+  left: 43%;
+  height: 100px;
+  top: 140px;
+  z-index: 5;
+  border-radius: 0 5em 0 5em;
+  transition: all 1s; }
+  #logo img {
+    margin-top: -20px;
+    width: 100px; }
+
+#main {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff; }
+  #main .img-principal {
+    height: 450px;
+    overflow: hidden; }
+    #main .img-principal img {
+      margin-top: -200px; }
+
+#map {
+  width: 100%; }
+
+.marginTop {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 7em; }
+
+.mensaje {
+  width: 40%;
+  padding-top: 1em;
+  color: #f7f7f7;
+  padding-top: 10%;
+  position: relative; }
+  .mensaje h2 {
+    color: #ededed;
+    font-size: 3em;
+    text-shadow: 0px 0px 20px #000; }
+  .mensaje .triangle {
+    width: 0;
+    height: 0;
+    opacity: 0.7;
+    border-top: 100px solid transparent;
+    border-left: 190px solid #000;
+    border-bottom: 100px solid transparent; }
+    .mensaje .triangle span {
+      line-height: 2em;
+      display: block;
+      width: 130px;
+      top: -2em;
+      position: relative;
+      left: -180px; }
+  .mensaje p {
+    font-weight: bolder; }
+
+#social-buttons {
+  height: 50px;
+  margin: 0 auto; }
+  #social-buttons #social {
+    width: auto;
+    padding: 5px; }
+
+.ribbon {
+  width: 117%;
+  position: relative;
+  left: -25px;
+  top: 20px;
+  height: 50px;
+  background: url(../imgs/ribbon.png);
+  background-size: 100% 100%; }
+
+.row-fluid {
+  margin: 0px;
+  padding: 0px; }
+
+.social {
+  font-family: 'Fjalla One', sans-serif; }
+
+@media (max-width: 900px) {
+  header {
+    background-color: #000; }
+    header:hover nav ul {
+      height: 130px; }
+    header:hover #logo {
+      top: 300px; }
+    header:active nav ul {
+      height: 130px; }
+    header:active #logo {
+      top: 300px; }
+
+  .fullScreen {
+    min-height: 100%;
+    height: auto; }
+
+  #index {
+    background: url(../imgs/DSCF0302-movil.jpg);
+    background-size: auto 100%; }
+
+  #comida {
+    height: 100%; }
+    #comida .image_food {
+      background-size: auto 100%;
+      background-position: top 50%; }
+
+  #contacto {
+    background: url(../imgs/DSCN1218-movil.jpg);
+    background-size: auto 100%; }
+
+  #costos {
+    background-size: auto 100%;
+    background: url(../imgs/DSCN1332-movil.jpg);
+    height: 100%; }
+    #costos .precio {
+      width: 45%;
+      margin: 0 auto; }
+
+  #go_up {
+    display: none; }
+
+  .img-principal {
+    display: none; }
+
+  .centerCircle {
+    position: static;
+    border-radius: 0px;
+    max-width: 100%;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-top: 1em; }
+
+  .half {
+    display: block;
+    width: 100%;
+    top: 0px; }
+
+  .slideContainer {
+    display: none; } }
+@media (max-width: 600px) {
+  .fullScreen:nth-of-type(1) {
+    background: url(../imgs/intro-movil.jpg);
+    background-size: auto 100%; }
+
+  .hidePhone {
+    display: none; }
+
+  .mensaje {
+    margin-top: 0;
+    font-size: 1em;
+    padding: 0;
+    width: 100%; }
+
+  * {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; }
+
+  #main, .down {
+    width: 100%; }
+
+  [class*="span"],
+  .row-fluid [class*="span"] {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0; }
+
+  .posts article {
+    display: block;
+    width: 100%; }
+
+  #costos {
+    height: auto; }
+
+  #costos .precio {
+    width: 100%;
+    display: block;
+    margin: 0; }
+
+  header nav ul li {
+    width: 80%;
+    margin: 0 auto;
+    display: block; }
+
+  .slideContainer {
+    display: none; } }
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  background-color: #f7f7f7; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #222; }
